@@ -1,0 +1,30 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  width: 30rem;
+  height: 100vh;
+  .form-line {
+    width: 100%;
+    margin-bottom: 1rem;
+    &.checkbox-line {
+      text-align: left;
+    }
+    .ant-typography {
+      display: inline-block;
+      width: 100%;
+      text-align: left;
+      &.label-checkbox {
+        width: unset;
+        margin-right: 0.4rem;
+      }
+    }
+  }
+  .buttons-group {
+    .ant-btn {
+      margin-left: 0.4rem;
+    }
+  }
+}
