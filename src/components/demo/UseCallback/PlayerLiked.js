@@ -1,9 +1,9 @@
-import React, { useCallback, useState } from "react";
+import React, { useState, useCallback } from "react";
 import ImgPlayerLiked from "../../usages/ImgPlayerLiked";
 
 const PlayerLiked = () => {
   const [likedList, setLikedList] = useState(list);
-  const likedHandler = useCallback((name, e) => {
+  const likedHandler = (name, e) => {
     const newList = likedList.map((player) => {
       if (player.name === name) {
         player.liked = e.target.checked;
@@ -12,7 +12,8 @@ const PlayerLiked = () => {
       return player;
     });
     setLikedList(newList);
-  }, []);
+  };
+
   return (
     <>
       <div>

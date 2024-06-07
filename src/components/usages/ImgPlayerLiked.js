@@ -1,7 +1,7 @@
 import { Checkbox } from "antd";
-import React, { memo } from "react";
+import React from "react";
 
-const ImgPlayerLiked = memo((props) => {
+const ImgPlayerLiked = (props) => {
   const { name, liked, likedHandler } = props;
   const imgSrc = (time = "old") => `/img/${name}-${time}.jpeg`;
   console.log(`render ${name} ${liked}`);
@@ -16,5 +16,5 @@ const ImgPlayerLiked = memo((props) => {
       />
     </>
   );
-});
+};
 export default ImgPlayerLiked;

@@ -1,5 +1,5 @@
-import { Button, Checkbox, Input, Radio } from "antd";
-import React, { useState, useReducer, useRef } from "react";
+import { Button, Checkbox, Input } from "antd";
+import React, { useReducer, useRef } from "react";
 import usersReducer from "./UserReducer";
 
 const initialUsers = [
@@ -12,7 +12,29 @@ let nextID = 4;
 
 const UserList = () => {
   const inputRef = useRef(null);
-  const [users, usersDispatch] = useReducer(usersReducer, initialUsers);
+  const [users, usersDispatch] = useReducer((users, action) => {
+    switch (action.type) {
+      case "add": {
+        const { newUser } = action;
+        return [...users, newUser];
+      }
+      case "check": {
+        const { id, check } = action;
+        return users.map((user) => {
+          if (user.id === id) {
+            user.finish = check;
+            return user;
+          }
+          return user;
+        });
+      }
+      case "delete":
+        const { id } = action;
+        return users.filter((user) => user.id !== id);
+      default:
+        return users;
+    }
+  }, initialUsers);
   const handleAdd = () => {
     usersDispatch({
       type: "add",

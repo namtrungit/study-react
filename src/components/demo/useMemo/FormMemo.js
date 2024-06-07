@@ -1,21 +1,15 @@
-import { Button, Checkbox, Input } from "antd";
-import React, { useEffect, useMemo, useState } from "react";
+import { Checkbox, Input } from "antd";
+import React, { useState } from "react";
 
 const FormMemo = () => {
   const [number, setNumber] = useState("");
-  const [dark, setDark] = useState([]);
-  const doubleNumber = useMemo(() => {
-    return slowFunction(number);
-  }, [number]);
-  const themes = useMemo(() => {
-    return {
-      backgroundColor: dark ? "pink" : "white",
-    };
-  }, [dark]);
+  const [dark, setDark] = useState({});
+  const doubleNumber = slowFunction(number);
 
-  useEffect(() => {
-    console.log("themes changed");
-  }, [themes]);
+  const themes = {
+    backgroundColor: dark ? "pink" : "white",
+  };
+
   return (
     <div style={{ margin: 0, backgroundColor: themes.backgroundColor }}>
       <div>

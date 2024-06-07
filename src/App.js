@@ -4,7 +4,7 @@ import store from "./app/store";
 import { Provider } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import FormDemo from "./components/demo/FormDemo";
+import SampleUseState from "./components/demo/useState/SampleUseState";
 export const ThemeContext = createContext(null);
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
       <ThemeContext.Provider value="">
         <ToastContainer />
         <div className="App">
-          <FormDemo />
+          <SampleUseState />
         </div>
       </ThemeContext.Provider>
     </Provider>

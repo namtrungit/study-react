@@ -10,6 +10,7 @@ const SampleUseState = () => {
         onChange={(e) => {
           setValueInput(e.target.value);
         }}
+        style={{ width: 200 }}
       />
       <div>{valueInput}</div>
       <Button

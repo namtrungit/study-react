@@ -7,7 +7,7 @@ const ArrayDemo = () => {
   const [array, push, remove, filter, clear] = useArray([1, 2, 3]);
   return (
     <>
-      <div>{array}</div>
+      <div>{array.join(', ')}</div>
       <div>
         <Input style={{ width: 200 }} ref={inputRef} type="number" />
         <Button
